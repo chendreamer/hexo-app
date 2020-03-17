@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="Chen">
   <meta name="keywords" content="">
-  <title>Hexo</title>
+  <title>Chen&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
@@ -47,7 +47,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/hexo-app/">&nbsp;<strong>Hexo</strong>&nbsp;</a>
+       href="/hexo-app/">&nbsp;<strong>Chen's Blog</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -149,31 +149,200 @@
     
     
     <div class="col-12 col-md-12 mx-auto index-info">
-      <a href="/hexo-app/2020/03/16/hello-world/">
-        <p class="h4 index-header">Hello World</p>
+      <a href="/hexo-app/2019/08/07/webpack/">
+        <p class="h4 index-header">Webpack使用手册</p>
       </a>
 
-      <a href="/hexo-app/2020/03/16/hello-world/">
+      <a href="/hexo-app/2019/08/07/webpack/">
         
         
           
         
         <div class="index-excerpt" >
-          <div class="index-text mb-1">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
+          <div class="index-text mb-1">:::tipWebpack日常积累:::
+构建一个es6项目教程1.初始化
+yarn init
+yarn add webpack webpack-cli --save-dev2.项目结构  
+3.代码结构
+webpack.config.js:
+var path = require(&#39;path&#39;);
 
-More info: Writing
-Run server1$ hexo server
-
-More </div>
+module.exports = {
+  mode: &#39;development&#39;,
+  entry: &#39;./src/index.js&#39;,
+  output: {
+    path: path.resolve(__dirname, &#39;dist&</div>
         </div>
       </a>
 
       <div class="index-btm">
         
-          <i class="iconfont icon-riqi2"></i>&nbsp;2020-03-16&nbsp;&nbsp;
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-08-07&nbsp;&nbsp;
         
         
+          <i class="iconfont icon-inbox"></i>
+          
+            <a href="/hexo-app/categories/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;
+          
+            <a href="/hexo-app/categories/%E5%89%8D%E7%AB%AF/Webpack/">Webpack</a>&nbsp;
+          &nbsp;
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/hexo-app/tags/%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">使用手册</a>&nbsp;
+          
+            <a href="/hexo-app/tags/Webpack/">Webpack</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <div class="col-12 col-md-12 mx-auto index-info">
+      <a href="/hexo-app/2019/07/25/nodejs/">
+        <p class="h4 index-header">Nodejs使用手册</p>
+      </a>
+
+      <a href="/hexo-app/2019/07/25/nodejs/">
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">:::tipNodejs日常积累:::入门参考文档：点击这里  
+</div>
+        </div>
+      </a>
+
+      <div class="index-btm">
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-07-25&nbsp;&nbsp;
+        
+        
+          <i class="iconfont icon-inbox"></i>
+          
+            <a href="/hexo-app/categories/%E5%90%8E%E7%AB%AF/">后端</a>&nbsp;
+          
+            <a href="/hexo-app/categories/%E5%90%8E%E7%AB%AF/Nodejs/">Nodejs</a>&nbsp;
+          &nbsp;
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/hexo-app/tags/%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">使用手册</a>&nbsp;
+          
+            <a href="/hexo-app/tags/Nodejs/">Nodejs</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <div class="col-12 col-md-12 mx-auto index-info">
+      <a href="/hexo-app/2019/07/18/vue/">
+        <p class="h4 index-header">Vue使用手册</p>
+      </a>
+
+      <a href="/hexo-app/2019/07/18/vue/">
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">:::tip用于积累vue知识:::
+vue常见安装命令yarn add vue-router
+yarn add vuex
+yarn global add @vue/cli
+yarn add element-ui
+yarn add sass-loader
+yarn add sass
+vue常见写法
+子组件向父组件传值子：this.$emit(&#39;func&#39;, value);//func:父组件接收变化的接口。   value：传递的值
+父：@func=&quot;function&quot; //命名一个函数接受子组件传值 
+
+所有属性绑定都是:disbaled=&quot;ti</div>
+        </div>
+      </a>
+
+      <div class="index-btm">
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-07-18&nbsp;&nbsp;
+        
+        
+          <i class="iconfont icon-inbox"></i>
+          
+            <a href="/hexo-app/categories/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;
+          
+            <a href="/hexo-app/categories/%E5%89%8D%E7%AB%AF/Vue/">Vue</a>&nbsp;
+          &nbsp;
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/hexo-app/tags/%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">使用手册</a>&nbsp;
+          
+            <a href="/hexo-app/tags/Vue/">Vue</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <div class="col-12 col-md-12 mx-auto index-info">
+      <a href="/hexo-app/2019/06/30/hexo/">
+        <p class="h4 index-header">Hexo使用手册</p>
+      </a>
+
+      <a href="/hexo-app/2019/06/30/hexo/">
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">以下为Hexo操作命令。  
+Quick StartCreate a new post$ hexo new &quot;My New Post&quot;
+More info: Writing
+Run server$ hexo server
+More info: Server
+Generate static files$ hexo generate
+  hexo g
+More info: Generating
+Deploy to remote sites$ hexo deploy
+  hexo d
+More info: Deployment
+</div>
+        </div>
+      </a>
+
+      <div class="index-btm">
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-06-30&nbsp;&nbsp;
+        
+        
+          <i class="iconfont icon-inbox"></i>
+          
+            <a href="/hexo-app/categories/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;
+          
+            <a href="/hexo-app/categories/%E5%89%8D%E7%AB%AF/Hexo/">Hexo</a>&nbsp;
+          &nbsp;
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/hexo-app/tags/Hexo/">Hexo</a>&nbsp;
+          
+            <a href="/hexo-app/tags/%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">使用手册</a>&nbsp;
+          
         
       </div>
     </div>
@@ -278,7 +447,7 @@ More </div>
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "&nbsp;",
+        "仰望星空&脚踏实地&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
