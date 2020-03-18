@@ -141,12 +141,24 @@
                 
 
 <div class="list-group">
-  <p class="h4">共计 4 篇文章</p>
+  <p class="h4">共计 12 篇文章</p>
   <hr>
   
     
       
       <p class="h5">2019</p>
+    
+    <a href="/hexo-app/2019/10/28/Mockjs/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">Mockjs使用手册</span>
+      <span style="float: right;">10-28</span>
+    </a>
+  
+    
+    <a href="/hexo-app/2019/08/29/ES6/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">ES6</span>
+      <span style="float: right;">08-29</span>
+    </a>
+  
     
     <a href="/hexo-app/2019/08/07/webpack/" class="list-group-item list-group-item-action">
       <span class="archive-post-title">Webpack使用手册</span>
@@ -160,18 +172,42 @@
     </a>
   
     
+    <a href="/hexo-app/2019/07/25/WEB%E5%AE%89%E5%85%A8/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">Web安全</span>
+      <span style="float: right;">07-25</span>
+    </a>
+  
+    
+    <a href="/hexo-app/2019/07/18/typescript/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">typescript使用手册</span>
+      <span style="float: right;">07-18</span>
+    </a>
+  
+    
+    <a href="/hexo-app/2019/07/18/js/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">JS使用手册</span>
+      <span style="float: right;">07-18</span>
+    </a>
+  
+    
     <a href="/hexo-app/2019/07/18/vue/" class="list-group-item list-group-item-action">
       <span class="archive-post-title">Vue使用手册</span>
       <span style="float: right;">07-18</span>
     </a>
   
-    
-    <a href="/hexo-app/2019/06/30/hexo/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Hexo使用手册</span>
-      <span style="float: right;">06-30</span>
-    </a>
-  
 </div>
+
+  <nav aria-label="index posts navigation">
+    <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/hexo-app/archives/2019/page/2/">2</a><a class="extend next" rel="next" href="/hexo-app/archives/2019/page/2/"><i class="fas fa-angle-double-right"></i></a>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByClassName("page-number")) {
+      ele.href += '#board';
+    }
+  </script>
 
 
 

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/hexo-app/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/hexo-app/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Chen">
+  <meta name="keywords" content="">
+  <title>ES6 - Chen&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/mdbootstrap/4.13.0/css/mdb.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/3.0.1/github-markdown.min.css" />
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link  rel="stylesheet" href="/hexo-app/lib/prettify/tomorrow-night-eighties.min.css" />
+
+<link  rel="stylesheet" href="/hexo-app/css/main.css" />
+
+
+  <link defer rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+<!-- 自定义样式保持在最底部 -->
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/hexo-app/">&nbsp;<strong>Chen's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/hexo-app/">首页</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/hexo-app/archives/">归档</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/hexo-app/categories/">分类</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/hexo-app/tags/">标签</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/hexo-app/about/">关于</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('/hexo-app/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+                <p class="mt-3 post-meta">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                  星期四, 八月 29日 2019, 5:33 下午
+                </p>
+              
+
+              <p class="mt-1">
+                
+                  
+                  <span class="post-meta">
+                    <i class="far fa-chart-bar"></i>
+                    1.1k 字
+                  </span>
+                
+
+                
+                  
+                  <span class="post-meta">
+                      <i class="far fa-clock"></i>
+                      4 分钟
+                  </span>
+                
+
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5 z-depth-3" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <div class="markdown-body">
+              <p><a href="http://es6.ruanyifeng.com/#docs/intro" target="_blank">ES6入门教程</a>  </p>
+<h2 id="let-const"><a href="#let-const" class="headerlink" title="let, const"></a>let, const</h2><p>let则实际上为js新增了块级作用域。用它所声明的变量，只在let命令所在的代码块内有效。</p>
+<pre><code class="js">let name = &#39;zach&#39;
+
+while (true) {
+    let name = &#39;obama&#39;
+    console.log(name)  //obama
+    break
+}
+
+console.log(name)  //zach</code></pre>
+<p>const也用来声明变量，但是声明的是常量。一旦声明，常量的值就不能改变。<br>当我们尝试去改变用const声明的常量时，浏览器就会报错。<br>const有一个很好的应用场景，就是当我们引用第三方库的时声明的变量，用const来声明可以避免未来不小心重命名而导致出现bug。</p>
+<pre><code class="js">const monent = require(&#39;moment&#39;)</code></pre>
+<h2 id="class-extends-super"><a href="#class-extends-super" class="headerlink" title="class, extends, super"></a>class, extends, super</h2><pre><code class="js">class Animal {
+    constructor(){
+        this.type = &#39;animal&#39;
+    }
+    says(say){
+        console.log(this.type + &#39; says &#39; + say)
+    }
+}
+
+let animal = new Animal()
+animal.says(&#39;hello&#39;) //animal says hello
+
+class Cat extends Animal {
+    constructor(){
+        super()
+        this.type = &#39;cat&#39;
+    }
+}
+
+let cat = new Cat()
+cat.says(&#39;hello&#39;) //cat says hello</code></pre>
+<p>上面代码首先用class定义了一个“类”，可以看到里面有一个constructor方法，这就是构造方法，而this关键字则代表实例对象。简单地说，constructor内定义的方法和属性是实例对象自己的，而constructor外定义的方法和属性则是所有实例对象可以共享的。  </p>
+<p>Class之间可以通过extends关键字实现继承，这比ES5的通过修改原型链实现继承，要清晰和方便很多。上面定义了一个Cat类，该类通过extends关键字，继承了Animal类的所有属性和方法。  </p>
+<p>super关键字，它指代父类的实例（即父类的this对象）。子类必须在constructor方法中调用super方法，否则新建实例时会报错。这是因为子类没有自己的this对象，而是继承父类的this对象，然后对其进行加工。如果不调用super方法，子类就得不到this对象。  </p>
+<p>ES6的继承机制，实质是先创造父类的实例对象this（所以必须先调用super方法），然后再用子类的构造函数修改this。  </p>
+<p>P.S 如果你写react的话，就会发现以上三个东西在最新版React中出现得很多。创建的每个component都是一个继承React.Component的类。</p>
+<h2 id="arrow-function"><a href="#arrow-function" class="headerlink" title="arrow function"></a>arrow function</h2><pre><code class="js">function(i){ return i + 1; } //ES5
+(i) =&gt; i + 1 //ES6
+----------------------------------
+function(x, y) { 
+    x++;
+    y--;
+    return x + y;
+}
+(x, y) =&gt; {x++; y--; return x+y}</code></pre>
+<p>当我们使用箭头函数时，函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。<br>并不是因为箭头函数内部有绑定this的机制，实际原因是箭头函数根本没有自己的this，它的this是继承外面的，因此内部的this就是外层代码块的this。</p>
+<h2 id="destructuring"><a href="#destructuring" class="headerlink" title="destructuring"></a>destructuring</h2><p>更多参考点<a href="https://developer.mozilla.org/zh-CN/docs/Web/js/Reference/Operators/Destructuring_assignment" target="_blank">这里</a></p>
+<pre><code class="js">es5:
+let cat = &#39;ken&#39;
+let dog = &#39;lili&#39;
+let zoo = {cat: cat, dog: dog}
+console.log(zoo)  //Object {cat: &quot;ken&quot;, dog: &quot;lili&quot;}
+
+es6:
+let cat = &#39;ken&#39;
+let dog = &#39;lili&#39;
+let zoo = {cat, dog}
+console.log(zoo)  //Object {cat: &quot;ken&quot;, dog: &quot;lili&quot;}
+----------------------------------
+let dog = {type: &#39;animal&#39;, many: 2}
+let { type, many} = dog
+console.log(type, many)   //animal 2</code></pre>
+<h2 id="default-rest"><a href="#default-rest" class="headerlink" title="default, rest"></a>default, rest</h2><pre><code class="js">es5:
+function animal(type){
+    type = type || &#39;cat&#39;  
+    console.log(type)
+}
+animal()
+
+es6:
+function animal(type = &#39;cat&#39;){
+    console.log(type)
+}
+animal()
+----------------------------------
+function animals(...types){
+    console.log(types)
+}
+animals(&#39;cat&#39;, &#39;dog&#39;, &#39;fish&#39;) //[&quot;cat&quot;, &quot;dog&quot;, &quot;fish&quot;]</code></pre>
+<h2 id="import-export"><a href="#import-export" class="headerlink" title="import export"></a>import export</h2><pre><code class="js">//index.js
+import animal from &#39;./content&#39;
+
+//content.js
+export default &#39;A cat&#39;
+---------------------------------
+export default &#39;A cat&#39;    
+export function say(){
+    return &#39;Hello!&#39;
+}    
+export const type = &#39;dog&#39; 
+---------------------------------
+import animal, { say, type } from &#39;./content&#39;  
+let says = say()
+console.log(`The ${type} says ${says} to ${animal}`)  
+//The dog says Hello to A cat</code></pre>
+<h2 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h2><pre><code class="js">var myFirstPromise = new Promise(function(resolve, reject) {
+    //当异步代码执行成功时，我们才会调用resolve(...), 当异步代码失败时就会调用reject(...)
+    //在本例中，我们使用setTimeout(...)来模拟异步代码，实际编码时可能是XHR请求或是HTML5的一些API方法.
+    var a = Math.random();
+    setTimeout(function() {
+        console.log(a);
+        if (a &gt; 0.5) {
+            resolve(&quot;成功!&quot;); //代码正常执行！
+        } else if (a &gt; 0.25) {
+            reject(&quot;因为我大于0.25小于0.5&quot;);//异常
+        } else {
+            reject(&quot;因为我小于0.25&quot;); //异常
+        }
+    }, 1000);
+});
+//捕捉结果
+myFirstPromise.then(function(successMessage) {
+    //successMessage的值是上面调用resolve(...)方法传入的值.
+    //successMessage参数不一定非要是字符串类型，这里只是举个例子
+    console.log(&quot;Yay! &quot; + successMessage);
+}, function(failMessage) {
+    //failMessage的值是上面调用reject(...)方法传入的值.
+    //failMessage参数不一定非要是字符串类型，这里只是举个例子
+    console.log(&quot;oh no! 失败了&quot;);
+});
+// 记录失败原因
+myFirstPromise.catch(function(reason) {
+    console.log(reason);
+})</code></pre>
+
+            </div>
+            <hr>
+            <div>
+              <p>
+                
+                  <span>
+                <i class="iconfont icon-inbox"></i>
+                    
+                      <a class="hover-with-bg" href="/hexo-app/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+                      &nbsp;
+                    
+                      <a class="hover-with-bg" href="/hexo-app/categories/%E5%89%8D%E7%AB%AF/ES6/">ES6</a>
+                      &nbsp;
+                    
+                  </span>&nbsp;&nbsp;
+                
+                
+                  <span>
+                <i class="iconfont icon-tag"></i>
+                    
+                      <a class="hover-with-bg" href="/hexo-app/tags/ES6/">ES6</a>
+                    
+                      <a class="hover-with-bg" href="/hexo-app/tags/%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">使用手册</a>
+                    
+                  </span>
+                
+              </p>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+              
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc-start"></div>
+<div id="toc">
+  <p class="h5"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/popper.js/1.16.1/umd/popper.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="https://cdn.staticfile.org/mdbootstrap/4.13.0/js/mdb.min.js" ></script>
+<script  src="/hexo-app/js/main.js" ></script>
+
+
+  <script  src="/hexo-app/js/lazyload.js" ></script>
+
+
+
+  
+  <script  src="https://cdn.staticfile.org/tocbot/4.10.0/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var navHeight = $('#navbar').height();
+      var post = $('#post');
+      var toc = $('#toc');
+      var tocLimMax = post.offset().top + post.height() - navHeight;
+
+      $(window).scroll(function () {
+        var tocLimMin = $('#toc-start').offset().top - navHeight;
+        var scroH = document.body.scrollTop + document.documentElement.scrollTop;
+
+        if (tocLimMin <= scroH && scroH <= tocLimMax) {
+          toc.css({
+            'display': 'block',
+            'position': 'fixed',
+            'top': navHeight,
+          });
+        } else if (scroH <= tocLimMin) {
+          toc.css({
+            'position': '',
+            'top': '',
+          });
+        } else if (scroH > tocLimMax) {
+          toc.css('display', 'none');
+        }
+      });
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        scrollSmooth: true,
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc > p').css('visibility', 'visible');
+      }
+      var offset = $('#board-ctn').css('margin-right')
+      $('#toc-ctn').css({
+        'right': offset
+      })
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+<!-- Plugins -->
+
+
+
+  <script  src="https://cdn.staticfile.org/prettify/188.0.0/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "ES6&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/hexo-app/js/local-search.js" ></script>
+  <script>
+    var path = "/hexo-app/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
